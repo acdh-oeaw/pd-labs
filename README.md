@@ -1,8 +1,7 @@
 # PARTHENOS Discovery Labs
 
 Various scripts and results for exploring and curating the data of the [PARTHENOS Project](http://www.parthenos-project.eu/).
-
-
+ 
 [PARTHENOS Discovery](https://parthenos.acdh.oeaw.ac.at/) is an application that gives access to the metadata records contributed by the partners of the PARTHENOS project, research infrastructures and initiatives in the broad domain of humanities and cultural heritage.
 These records are being regularly harvested   converted into a common semantic model, the PARTHENOS Entities Model (PEM) and ingested into a triple store. PARTHENOS Discovery allows to navigate, explore and search this data.
 
