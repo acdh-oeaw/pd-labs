@@ -1,6 +1,6 @@
 # Data quality
 
-Following are
+Following are the main classes of curation issues in Parthenos Discovery (or in any aggreagtion and mapping effor really):
 
 * **Missing data** – There are often large lacunae in the aggregated data space. This can be due to erroneous or incomplete mapping, but mostly it is already the source metadata that does not make certain characteristics of a resource explicit.
 
