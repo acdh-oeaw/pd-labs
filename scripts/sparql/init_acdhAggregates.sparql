@@ -1,0 +1,361 @@
+PREFIX acdh: <http://acdh.oeaw.ac.at/>
+
+DELETE {?s ?p ?o} WHERE { GRAPH acdh:agg-graph { ?s ?p ?o } };
+
+
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("http" as ?key ).
+       BIND (<http://www.cidoc-crm.org/cidoc-crm/E39_Actor> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+	   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("urn" as ?key ).
+       BIND (<http://www.cidoc-crm.org/cidoc-crm/E39_Actor> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("http" as ?key ).
+       BIND (<http://parthenos.d4science.org/CRMext/CRMpe.rdfs/PE18_Dataset> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("urn" as ?key ).
+       BIND (<http://parthenos.d4science.org/CRMext/CRMpe.rdfs/PE18_Dataset> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("http" as ?key ).
+       BIND (<http://parthenos.d4science.org/CRMext/CRMpe.rdfs/PE1_Service> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("urn" as ?key ).
+       BIND (<http://parthenos.d4science.org/CRMext/CRMpe.rdfs/PE1_Service> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+
+
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("http" as ?key ).
+       BIND (<http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/D14_Software> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("urn" as ?key ).
+       BIND (<http://www.ics.forth.gr/isl/CRMext/CRMdig.rdfs/D14_Software> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   	   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("http" as ?key ).
+       BIND (<http://www.cidoc-crm.org/cidoc-crm/E53_Place> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+	   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("urn" as ?key ).
+       BIND (<http://www.cidoc-crm.org/cidoc-crm/E53_Place> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   	   
+
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("http" as ?key ).
+       BIND (<http://parthenos.d4science.org/CRMext/CRMpe.rdfs/PE35_Project> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   
+# PE35_Project urn
+	   
+INSERT { GRAPH acdh:agg-graph {_:a a acdh:Aggregate.
+           _:a acdh:hasKey ?key.
+           _:a acdh:hasValue ?cnt.
+           _:a acdh:hasSource ?sourceLabel.
+           _:a acdh:hasClass ?maintype.
+           _:a acdh:generatedOn ?tmstmp.
+         }}
+WHERE { BIND(now() as ?tmstmp).
+  {
+SELECT ?sourceLabel ?key ?maintype (COUNT (DISTINCT ?s) as ?cnt)  WHERE {
+       BIND ("urn" as ?key ).
+       BIND (<http://parthenos.d4science.org/CRMext/CRMpe.rdfs/PE35_Project> as ?maintype).
+                                      
+                GRAPH ?g { ?s a ?t .}
+                      ?t rdfs:subClassOf* ?maintype.    
+	
+                          FILTER strstarts(lcase(str(?s)), ?key). 
+                GRAPH <http://www.d-net.research-infrastructures.eu/provenance/graph> { 
+					?g <http://www.d-net.research-infrastructures.eu/provenance/collectedFrom> ?source .
+					?source <http://www.d-net.research-infrastructures.eu/provenance/isApiOf> ?sourceLabel .
+				}
+            }
+            GROUP BY ?sourceLabel ?key ?maintype
+                     
+                     
+            }
+       };
+	   	   	   
+	   
+
+# comments seem to invoke <EOF> when using curl:
+# curl 'https://parthenos-dev:v77nF6Xj4Jtd@blazegraph.herkules.arz.oeaw.ac.at/parthenos-dev/sparql' -H 'Content-Type: application/sparql-update; charset=UTF-8' -H 'Accept: text/boolean' -d @init_acdhAggregates.sparql	   
+# therefore they have been removed from between the individual SPARQL statements :/
+
+# control query: 
+#SELECT ?g ?s ?p ?o WHERE  { GRAPH ?g {?s a acdh:Aggregate. ?s ?p ?o. }}
+		   
+		   
